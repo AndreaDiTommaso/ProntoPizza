@@ -42,8 +42,8 @@ CREATE TABLE Utente (
  id int NOT NULL AUTO_INCREMENT,
  ristorante int NOT NULL,
  prezzo int  NOT NULL,
- nome varchar NOT NULL, 
- tipo varchar NOT NULL,
+ nome varchar(30) NOT NULL, 
+ tipo varchar(20) NOT NULL ,
  PRIMARY KEY (id),
  FOREIGN KEY (ristorante) REFERENCES Ristorante(id)
  );
@@ -80,7 +80,7 @@ CREATE TABLE Utente (
  id int NOT NULL AUTO_INCREMENT,
  ordine int NOT NULL,
  cibo int NOT NULL,
- quantita int NOT NULL
+ quantita int NOT NULL,
  PRIMARY KEY (id),
  FOREIGN KEY (ordine) REFERENCES Ordine(id),
  FOREIGN KEY (cibo) REFERENCES Cibo(id)
