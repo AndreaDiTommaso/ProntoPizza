@@ -7,6 +7,7 @@ CREATE TABLE Utente (
  cognome varchar (20) NOT NULL,
  telefono int (10),
  password int (20) NOT NULL,
+ email varchar (50) NOT NULL,
  data_nascita DATE NOT NULL,
  sesso TINYINT NOT NULL,
  citta varchar (20) NOT NULL,
@@ -34,14 +35,14 @@ CREATE TABLE Utente (
  prenotato TINYINT NOT NULL,
  numero int NOT NULL, 
  ristorante int NOT NULL,
- data_prenotazione DATETIME NOT NULL,
+ data_prenotazione DATETIME DEFAULT NULL,
  PRIMARY KEY (id),
  FOREIGN KEY (ristorante) REFERENCES Ristorante(id)
  );
  CREATE TABLE Cibo (
  id int NOT NULL AUTO_INCREMENT,
  ristorante int NOT NULL,
- prezzo int  NOT NULL,
+ prezzo float  NOT NULL,
  nome varchar(30) NOT NULL, 
  tipo varchar(20) NOT NULL ,
  PRIMARY KEY (id),
@@ -94,5 +95,6 @@ CREATE TABLE Utente (
  FOREIGN KEY (utente) REFERENCES Utente(nome_utente),
  FOREIGN KEY (ristorante) REFERENCES Ristorante(id)
  );
- 
+ ALTER TABLE `Ordine` ADD `destinazione` VARCHAR(30) NOT NULL AFTER `effettuata`;
+ ALTER TABLE `Commento` ADD `testo` TEXT NOT NULL AFTER `data`;
  

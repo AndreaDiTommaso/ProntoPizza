@@ -1,0 +1,20 @@
+<?php
+class Fprenotazione extends Fdb
+{
+	public function inserisci()
+	{
+		$query="INSERT INTO Prenotazione VALUES ( null ,?,?,?, null ,?,?,?)";
+	   $arr= array($this->obj->get_ristorante(),$this->obj->get_utente(),$this->obj->get_tavolo(),$this->obj->get_effettuata(),$this->obj->get_data_prenotazione(),$this->obj->get_visualizzata(),$this->obj->get_info());
+		$x=$this->db->prepare($query);
+		$this->risultato=$x->execute($arr);
+	}
+	public function modifica()
+	{
+		$query="UPDATE Prenotazione SET ristorante = ? , utente = ? , tavolo = ? ,  data_prenotazione = ? , visualizzata = ? , info = ?  WHERE id = ? ";
+	   $arr= array($this->obj->get_ristorante(),$this->obj->get_utente(),$this->obj->get_tavolo(),$this->obj->get_data_prenotazione(),$this->obj->get_visualizzata(),$this->obj->get_info(), $this->obj->get_id());
+		$x=$this->db->prepare($query);
+		$this->risultato=$x->execute($arr);
+	}
+
+}
+?>
