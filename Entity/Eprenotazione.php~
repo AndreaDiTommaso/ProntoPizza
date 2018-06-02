@@ -30,25 +30,10 @@ class EPrenotazione {
     
     public function crea()
    {
-   	$t=$this->tavolo->get_id();
-   	$d=$this->data_prenotazione();
-   	$y=$this->ristorante->get_id();
-   	$r=new Eristornate();
-   	$r->set_id($y);
-   	$r->carica();
-   	$r=$r->get_tavoli_liberi($d);
-   	for($i=0;$i<count($r);$i++)
-   	{
-   		$a=$r[$i];
-   		if($y==$a->get_id())
-   		{
-   			$x=new Fprenotazione($this);
-   		   $x->inserisci();
-   	      $x=0;
-   	    }
-   	    else{return "impossibile effettuare la prenotazione"}
-   	}
-    }
+   	$x=new Fprenotazione($this);
+   	$x->inserisci();
+   	$x=0;
+   }
    public function salva()
    {
    	$x=new Fprenotazione($this);

@@ -17,10 +17,10 @@ class Fdb
       $this->connetti($this->hostname,$this->dbname,$this->user,$this->pass);
       $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
-   public function __destruct()
+  /*  public function __destruct()
     {
     	$this->db=null;
-    }
+    }*/
     public function get_hostname()
     {
         return $this->hostname;

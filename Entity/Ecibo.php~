@@ -6,7 +6,7 @@ class Ecibo {
     private $id; //int
     private $ristorante;
     
-    public function get_ristorante(){return (int) $this->ristorante;}
+    public function get_ristorante(){return (object) $this->ristorante;}
     public function get_id()
     {
         return (int) $this->id;
@@ -35,7 +35,7 @@ class Ecibo {
     public function set_nome( string $nome) {
         $this->nome=$nome;
     }
-   public function set_ristorante (int $r){$this->ristorante=$r;}
+   public function set_ristorante (Eristorante $r){$this->ristorante=$r;}
     
     public function crea()
    {
@@ -56,16 +56,7 @@ class Ecibo {
    	$x=0;
    	
    }
-   public function carica()
-   {
-   	$x=new Fcibo($this);
-   	$x=$x->cerca('id',$this->id);
-   	$this->nome=$x[0]['nome'];
-      $this->tipo=$x[0]['tipo'];
-      $this->prezzo=$x[0]['prezzo'];
-      $this->ristorante=$x[0]['ristorante'];
-      $x=0;
-    }
+  
     
     
     

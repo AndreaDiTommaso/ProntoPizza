@@ -84,7 +84,7 @@ class Eordine
       	array_push($this->items,$z);
       }
       $x=0;$y=0;$z=0;
-    }       
-   }
+      }       
+    }
 
 ?>

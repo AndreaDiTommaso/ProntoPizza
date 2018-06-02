@@ -39,8 +39,8 @@ class Eordineitem
    {
    	$x=new Fordineitem($this);
    	$x=$x->cerca('id',$this->id);
-   	$this->ordine=$x[0]['ordine'];
-      $this->quantita=$x[0]['quantita'];
+   	$this->utente=$x[0]['ordine'];
+      $this->ristorante=$x[0]['quantita'];
       $y=new Ecibo();
       $y->set_id($x[0]['cibo']);
       $y->carica();

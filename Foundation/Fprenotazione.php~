@@ -21,9 +21,7 @@ class Fprenotazione extends Fdb
 		$t=$d;
 		$d->modify('+1 day');
 		$x=$this->db->prepare($query);
-		$x->execute([$t,$d]);
-		$r=$x->fetchAll();
-		return $r;
+		return $x->execute([$t,$d]);
 	}
 
 }

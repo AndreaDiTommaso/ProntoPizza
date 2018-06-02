@@ -177,7 +177,6 @@ class Eristorante
       }
       	
       }
-      return $tavoliliberi;
       
       
    	
